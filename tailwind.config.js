@@ -7,12 +7,15 @@ export default {
 			surface: '#182328',
 			text: '#E1E8EA',
 			textMuted: '#626A6E',
-			warning: '#F5D470',
-			warningMuted: '#867C4C',
-			success: '#3DEE8F',
-			successMuted: '#2B885C',
-			danger: '#FA7046',
-			critical: '#AB375C'
+			stateYellow: '#F5D470',
+			stateYellowMuted: '#867C4C',
+			stateGreen: '#3DEE8F',
+			stateGreenMuted: '#2B885C',
+			stateOrange: '#FA7046',
+			stateRed: '#AB375C',
+			stateUnknown: '#808080',
+			black: '#000000',
+			white: '#FFFFFF'
 		},
 		fontFamily: {
 			sans: ['Plus Jakarta Sans', 'sans-serif']

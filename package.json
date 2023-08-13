@@ -34,6 +34,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"date-fns": "^2.30.0",
 		"ts-stromgedacht": "^1.0.0"
 	}
 }
