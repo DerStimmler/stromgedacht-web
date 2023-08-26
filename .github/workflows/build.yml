@@ -58,7 +58,7 @@ jobs:
           retention-days: 30
 
   deploy-demo:
-    name: Deploy demo
+    name: Deploy app
     runs-on: ubuntu-latest
     needs: build
     permissions:

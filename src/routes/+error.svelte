@@ -1,5 +1,6 @@
 <script>
 	import { goto } from '$app/navigation';
+	import { base } from '$app/paths';
 
-	goto('/');
+	goto(`${base}/`);
 </script>

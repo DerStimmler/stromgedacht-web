@@ -1,5 +1,6 @@
 <script>
 	import '../app.css';
+	import { base } from '$app/paths';
 </script>
 
 <header class="flex flex-col gap-2">
@@ -15,7 +16,7 @@
 
 <footer class="w-full flex justify-between items-center">
 	<a href="https://github.com/derstimmler/stromgedacht-web">
-		<img src="images/github-mark-white.svg" width="32" height="32" alt="github logo" />
+		<img src="{base}/images/github-mark-white.svg" width="32" height="32" alt="github logo" />
 	</a>
 	<a href="https://stromgedacht.de" target="_blank">StromGedacht</a>
 </footer>
