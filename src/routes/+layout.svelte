@@ -5,7 +5,7 @@
 <header class="flex flex-col gap-2">
 	<h1 class="text-2xl text-center">StromGedacht Web</h1>
 	<h2 class="text-textMuted text-center">
-		Inoffizielle Webseite zur Übersicht von StromGedacht Daten
+		Inoffizielle Webseite zur Anzeige von StromGedacht Daten
 	</h2>
 </header>
 
