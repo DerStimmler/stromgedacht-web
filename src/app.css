@@ -11,6 +11,6 @@
     }
     
     body {
-        @apply bg-background text-text p-8 flex flex-col gap-8 items-center;
+        @apply bg-background text-text;
     }
 }
