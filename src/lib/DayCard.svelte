@@ -1,7 +1,9 @@
 <script lang="ts">
 	import { isSameDay, format } from 'date-fns';
-	import type { CustomRegionState, CustomRegionStatePeriod } from '$lib/CustomRegionStatePeriod';
+	import type { CustomRegionStatePeriod } from '$lib/CustomRegionStatePeriod';
 	import { CustomRegionStates } from '$lib/CustomRegionStates';
+	import type { CustomRegionState } from '$lib/CustomRegionState';
+
 	export let highlightCurrentDay = false;
 	$: isDayNameBole = highlightCurrentDay && isSameDay(new Date(date), new Date());
 	export let date: string;
