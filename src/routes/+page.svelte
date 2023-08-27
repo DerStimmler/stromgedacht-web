@@ -20,6 +20,7 @@
 	import DayTimeline from '$lib/DayTimeline.svelte';
 	import type { CustomRegionStatePeriod } from '$lib/CustomRegionStatePeriod';
 	import { CustomRegionStates } from '$lib/CustomRegionStates';
+	import Legend from '$lib/Legend.svelte';
 
 	const zipPattern = /^[0-9]{5}$/;
 
@@ -128,6 +129,10 @@
 					<DayTimeline states={states[1]} />
 				{/each}
 			</div>
+		</Card>
+
+		<Card>
+			<Legend />
 		</Card>
 	{/if}
 </div>
