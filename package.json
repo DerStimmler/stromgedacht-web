@@ -12,7 +12,6 @@
 		"format": "prettier --plugin-search-dir . --write ."
 	},
 	"devDependencies": {
-		"@originjs/vite-plugin-commonjs": "^1.0.3",
 		"@sveltejs/adapter-auto": "^2.0.0",
 		"@sveltejs/adapter-static": "^2.0.3",
 		"@sveltejs/kit": "^1.20.4",
@@ -35,6 +34,6 @@
 	"type": "module",
 	"dependencies": {
 		"date-fns": "^2.30.0",
-		"ts-stromgedacht": "^1.0.0"
+		"ts-stromgedacht": "2.0.0"
 	}
 }

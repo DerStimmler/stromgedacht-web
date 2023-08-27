@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import stromgedachtClient from 'ts-stromgedacht';
+	import { stromgedachtClient } from 'ts-stromgedacht';
 
 	import {
 		format,
