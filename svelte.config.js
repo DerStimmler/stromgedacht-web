@@ -1,7 +1,7 @@
 import adapter from '@sveltejs/adapter-static';
 import { vitePreprocess } from '@sveltejs/kit/vite';
 
-const isProduction = process.env.NODE_ENV === 'production';
+const isDevelopment = process.env.NODE_ENV === 'development';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -20,7 +20,7 @@ const config = {
 			strict: true
 		}),
 		paths: {
-			base: isProduction ? '/stromgedacht-web' : '',
+			base: isDevelopment ? '' : process.env.BASE_PATH,
 			relative: false
 		}
 	}

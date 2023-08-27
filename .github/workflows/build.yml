@@ -27,7 +27,11 @@ jobs:
         run: pnpm install
 
       - name: Build
-        run: pnpm build
+        env:
+          BASE_PATH: '/stromgedacht-web'
+        run: |
+          pnpm build
+          touch build/.nojekyll
 
       - name: Check
         run: pnpm check
@@ -58,7 +62,7 @@ jobs:
           retention-days: 30
 
   deploy-demo:
-    name: Deploy app
+    name: Deploy
     runs-on: ubuntu-latest
     needs: build
     permissions:
@@ -68,6 +72,6 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Deploy demo to GitHub Pages
+      - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
