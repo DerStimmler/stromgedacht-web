@@ -28,10 +28,9 @@ jobs:
 
       - name: Build
         env:
-          BASE_PATH: '/stromgedacht-web'
+          BASE_PATH: '/${{ github.event.repository.name }}'
         run: |
           pnpm build
-          touch build/.nojekyll
 
       - name: Check
         run: pnpm check
@@ -39,27 +38,10 @@ jobs:
       - name: Lint
         run: pnpm lint
 
-      - name: Archive artifact
-        shell: sh
-        if: runner.os == 'Linux'
-        run: |
-          chmod -c -R +rX "build/" | while read line; do
-            echo "::warning title=Invalid file permissions automatically fixed::$line"
-          done
-          tar \
-            --dereference --hard-dereference \
-            --directory "build/" \
-            -cvf "$RUNNER_TEMP/artifact.tar" \
-            --exclude=.git \
-            --exclude=.github \
-            .
-
-      - name: Upload artifact
-        uses: actions/upload-artifact@main
+      - name: Upload Artifacts
+        uses: actions/upload-pages-artifact@v2
         with:
-          name: github-pages
-          path: ${{ runner.temp }}/artifact.tar
-          retention-days: 30
+          path: 'build/'
 
   deploy-demo:
     name: Deploy
@@ -74,4 +56,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v1
+        uses: actions/deploy-pages@v2
