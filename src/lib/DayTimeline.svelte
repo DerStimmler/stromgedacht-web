@@ -21,8 +21,11 @@
 	}
 </script>
 
-<div class="flex flex-col w-full items-center">
-	<div class="flex h-10 rounded overflow-hidden" style:width="calc(100% - calc(100% / {segments}))">
+<div class="flex flex-col w-full items-center min-w-64">
+	<div
+		class="flex flex-1 rounded overflow-hidden min-h-14"
+		style:width="calc(100% - calc(100% / {segments}))"
+	>
 		{#each states as regionStatePeriod}
 			<div
 				class="flex p-2 items-center justify-between h-full text-black"
@@ -33,6 +36,7 @@
 				class:bg-stateOrange={regionStatePeriod.state === CustomRegionStates.Orange}
 				class:bg-stateRed={regionStatePeriod.state === CustomRegionStates.Red}
 				class:bg-stateUnknown={regionStatePeriod.state === CustomRegionStates.Unknown}
+				class:bg-stateSuperGreen={regionStatePeriod.state === CustomRegionStates.SuperGreen}
 				use:tooltip={{
 					text: `${format(regionStatePeriod.from, 'HH:mm:ss')} - ${format(
 						regionStatePeriod.to,

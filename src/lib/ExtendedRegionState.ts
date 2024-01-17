@@ -1,3 +1,3 @@
 export enum ExtendedRegionState {
-	Unknown = -1
+	Unknown = -2
 }

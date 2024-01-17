@@ -123,7 +123,7 @@
 
 	{#if regionStatesPerDay.size > 0}
 		<Card>
-			<div class="grid gap-6 grid-cols-[8rem_minmax(42rem,_1fr)]">
+			<div class="grid gap-6 md:grid-cols-[max-content_minmax(42rem,_1fr)]">
 				{#each regionStatesPerDay as states (states[0])}
 					<DayCard states={states[1]} date={states[0]} highlightCurrentDay={true} />
 					<DayTimeline states={states[1]} />

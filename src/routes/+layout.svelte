@@ -10,7 +10,7 @@
 	</h2>
 </header>
 
-<main class="flex-1">
+<main class="flex-1 w-full max-w-screen-lg">
 	<slot />
 </main>
 

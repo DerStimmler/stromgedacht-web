@@ -1,4 +1,5 @@
 <ul>
+	<li class="before:bg-stateSuperGreen">Verbrauch vorverlegen – Strom jetzt nutzen</li>
 	<li class="before:bg-stateGreen">Normalbetrieb – Du musst nichts weiter tun</li>
 	<li class="before:bg-stateYellow">Verbrauch vorverlegen – Strom jetzt nutzen</li>
 	<li class="before:bg-stateOrange">Verbrauch reduzieren, um Kosten und CO2 zu sparen</li>

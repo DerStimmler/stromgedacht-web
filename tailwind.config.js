@@ -14,6 +14,7 @@ export default {
 			stateOrange: '#FA7046',
 			stateRed: '#AB375C',
 			stateUnknown: '#808080',
+			stateSuperGreen: '#ff00f6',
 			black: '#000000',
 			white: '#FFFFFF'
 		},

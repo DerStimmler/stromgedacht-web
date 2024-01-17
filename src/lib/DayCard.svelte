@@ -23,6 +23,7 @@
 	class:bg-stateOrange={worstState === CustomRegionStates.Orange}
 	class:bg-stateRed={worstState === CustomRegionStates.Red}
 	class:bg-stateUnknown={worstState === CustomRegionStates.Unknown}
+	class:bg-stateSuperGreen={worstState === CustomRegionStates.SuperGreen}
 >
 	<span class:font-bold={isDayNameBole}>{dayName}</span>
 	<span class="text-xs">{format(new Date(date), 'dd.MM.yyyy')}</span>
