@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { stromgedachtClient } from 'ts-stromgedacht';
+	import { type Forecast, stromgedachtClient } from 'ts-stromgedacht';
 
 	import {
 		format,
@@ -21,6 +21,7 @@
 	import type { CustomRegionStatePeriod } from '$lib/CustomRegionStatePeriod';
 	import { CustomRegionStates } from '$lib/CustomRegionStates';
 	import Legend from '$lib/Legend.svelte';
+	import ForecastChart from '$lib/ForecastChart.svelte';
 
 	const zipPattern = /^[0-9]{5}$/;
 
@@ -29,6 +30,8 @@
 
 	let regionStatePeriods: CustomRegionStatePeriod[] = [];
 	$: regionStatesPerDay = getRegionStatesPerDay(regionStatePeriods);
+
+	let forecast: Forecast | null = null;
 
 	function getRegionStatesPerDay(
 		regionStatePeriods: CustomRegionStatePeriod[]
@@ -87,6 +90,8 @@
 	});
 
 	async function search() {
+		isLoading = true;
+
 		if (!zipPattern.test(zip)) return;
 
 		localStorage.setItem('zip', zip);
@@ -99,8 +104,17 @@
 		to = addDays(to, 2);
 		to = set(to, { hours: 23, minutes: 59, seconds: 59, milliseconds: 999 });
 
-		isLoading = true;
 		regionStatePeriods = await stromgedachtClient.states(zip, from, to);
+
+		from = new Date();
+		from = subDays(from, 7);
+		from = set(from, { hours: 0, minutes: 0, seconds: 0, milliseconds: 0 });
+
+		to = new Date();
+		to = addDays(to, 0);
+		to = set(to, { hours: 23, minutes: 59, seconds: 59, milliseconds: 999 });
+
+		forecast = await stromgedachtClient.forecast(zip, from, to);
 		isLoading = false;
 	}
 </script>
@@ -133,6 +147,11 @@
 
 		<Card>
 			<Legend />
+		</Card>
+	{/if}
+	{#if forecast !== null}
+		<Card>
+			<ForecastChart {forecast}></ForecastChart>
 		</Card>
 	{/if}
 </div>
