@@ -41,7 +41,8 @@
 					text: `${format(regionStatePeriod.from, 'HH:mm:ss')} - ${format(
 						regionStatePeriod.to,
 						'HH:mm:ss'
-					)}`
+					)}`,
+					state: regionStatePeriod.state
 				}}
 			>
 				{#if showLabels}

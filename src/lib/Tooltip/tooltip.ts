@@ -1,9 +1,11 @@
 import Tooltip from '$lib/Tooltip/Tooltip.svelte';
+import type { CustomRegionState } from '../CustomRegionState';
 
-export function tooltip(element: HTMLElement, options: { text: string }) {
+export function tooltip(element: HTMLElement, options: { text: string; state: CustomRegionState }) {
 	let tooltipComponent: Tooltip;
 	let isVisible = false;
 	let text = options.text;
+	const state = options.state;
 
 	function mouseOver(event: MouseEvent) {
 		if (isVisible) return;
@@ -11,6 +13,7 @@ export function tooltip(element: HTMLElement, options: { text: string }) {
 		tooltipComponent = new Tooltip({
 			props: {
 				text: text,
+				state: state,
 				x: event.pageX,
 				y: event.pageY
 			},

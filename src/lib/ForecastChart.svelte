@@ -77,5 +77,5 @@
 </script>
 
 <div bind:clientWidth={width} class="grid">
-	<div style="width: {width}px;" class="aspect-video" id="chart"></div>
+	<div style="width: {width}px;" class="aspect-video p-2" id="chart"></div>
 </div>
