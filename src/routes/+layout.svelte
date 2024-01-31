@@ -3,7 +3,7 @@
 	import { base } from '$app/paths';
 </script>
 
-<header class="flex flex-col gap-2">
+<header class="flex flex-col gap-2 max-w-screen-lg">
 	<h1 class="text-2xl text-center">StromGedacht Web</h1>
 	<h2 class="text-textMuted text-center">
 		Inoffizielle Webseite zur Anzeige von StromGedacht Daten
@@ -14,7 +14,7 @@
 	<slot />
 </main>
 
-<footer class="w-full flex justify-between items-center">
+<footer class="w-full flex justify-between items-center max-w-screen-lg">
 	<a href="https://github.com/derstimmler/stromgedacht-web">
 		<img src="{base}/images/github-mark-white.svg" width="32" height="32" alt="github logo" />
 	</a>
