@@ -46,7 +46,7 @@ export function tooltip(element: HTMLElement, options: { text: string; state: Cu
 		update(options: { text: string }) {
 			text = options.text;
 
-			if (tooltipComponent) {
+			if (tooltipComponent?.props?.text) {
 				tooltipComponent.props.text = text;
 			}
 		},
