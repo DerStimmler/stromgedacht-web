@@ -14,7 +14,6 @@ const ASSETS = [
 ];
 
 const sw = self as unknown as ServiceWorkerGlobalScope;
-
 sw.addEventListener('install', (event) => {
 	// Create a new cache and add all files to it
 	async function addFilesToCache() {
@@ -44,6 +43,9 @@ sw.addEventListener('fetch', (event) => {
 
 	// only http requests
 	if (!url.protocol.startsWith('http')) return;
+
+	//ignore api calls
+	if (url.host.startsWith('api.stromgedacht.de')) return;
 
 	async function respond() {
 		const cache = await caches.open(CACHE);
