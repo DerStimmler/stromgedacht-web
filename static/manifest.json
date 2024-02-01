@@ -1,8 +1,8 @@
 {
 	"name": "StromGedacht Web",
 	"short_name": "StromGedacht Web",
-	"start_url": "/",
-	"scope": "/",
+	"start_url": ".",
+	"scope": ".",
 	"developer": {
 		"name": "DerStimmler",
 		"url": "https://github.com/DerStimmler"
