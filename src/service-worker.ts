@@ -4,6 +4,7 @@
 /// <reference lib="webworker" />
 
 import { build, files, version } from '$service-worker';
+import { ServiceWorkerMessages } from '$lib/utils/service-worker-messages';
 
 // Create a unique cache name for this deployment
 const CACHE = `cache-${version}`;
@@ -21,6 +22,7 @@ sw.addEventListener('install', (event) => {
 		await cache.addAll(ASSETS);
 	}
 
+	console.log('cache files');
 	event.waitUntil(addFilesToCache());
 });
 
@@ -32,6 +34,7 @@ sw.addEventListener('activate', (event) => {
 		}
 	}
 
+	console.log('clear cache');
 	event.waitUntil(deleteOldCaches());
 });
 
@@ -89,4 +92,10 @@ sw.addEventListener('fetch', (event) => {
 	}
 
 	event.respondWith(respond());
+});
+
+sw.addEventListener('message', (event) => {
+	if (event.data === ServiceWorkerMessages.SkipWaiting) {
+		event.waitUntil(sw.skipWaiting());
+	}
 });

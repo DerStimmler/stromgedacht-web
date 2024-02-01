@@ -1,6 +1,7 @@
 <script>
 	import '../app.css';
 	import { base } from '$app/paths';
+	import UpdateServiceWorkerBanner from '$lib/UpdateServiceWorkerBanner.svelte';
 </script>
 
 <header class="flex flex-col gap-2 max-w-screen-lg">
@@ -20,3 +21,5 @@
 	</a>
 	<a href="https://stromgedacht.de" target="_blank">StromGedacht</a>
 </footer>
+
+<UpdateServiceWorkerBanner></UpdateServiceWorkerBanner>
